@@ -95,7 +95,6 @@ summarise_data <- function(df) {
   # 4) Age range that contains most stops, of:
   # [-1],    [0-11],  [12-17], [18-24], [25-34],
   # [35-44], [45-54], [55-64], [65-74], [75+]
-  df <- append_age_group(df)
   
   # ba stands for by_age_group
   ba <- group_by(df, Age_group) %>%
@@ -141,21 +140,6 @@ summarise_data <- function(df) {
   return(returnList)
 }
 
-# Adds the Age_group column to the dataframe
-append_age_group <- function(df) {
-  return(df %>% mutate(
-    Age_group =
-      ifelse(Age %in% 0:11, "0-11",
-      ifelse(Age %in% 12:17, "12-17",
-      ifelse(Age %in% 18:24, "18-24",
-      ifelse(Age %in% 25:34, "25-34",
-      ifelse(Age %in% 35:44, "35-44",
-      ifelse(Age %in% 45:54, "45-54",
-      ifelse(Age %in% 55:64, "55-64",
-      ifelse(Age %in% 65:74, "65-74",
-      ifelse(Age >= 75, "75+", "Undefined")))))))))
-  ))
-}
 
 
 

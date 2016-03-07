@@ -29,10 +29,30 @@ wrangle <- function(original_df) {
                # Date (will be changed to just display Year)
                Year=FIO_DATE_CORRECTED
                )
+  # Add an age group column representing what age group a person belongs to
+  df <- append_age_group(df)
+  
   # Run it through the refactor() function,
   # changing the values associated with Race and Date/Year
   return(refactor(df))
 }
+
+# Adds the Age_group column to the dataframe
+append_age_group <- function(df) {
+  return(df %>% mutate(
+    Age_group =
+      ifelse(Age %in% 0:11, "0-11",
+      ifelse(Age %in% 12:17, "12-17",
+      ifelse(Age %in% 18:24, "18-24",
+      ifelse(Age %in% 25:34, "25-34",
+      ifelse(Age %in% 35:44, "35-44",
+      ifelse(Age %in% 45:54, "45-54",
+      ifelse(Age %in% 55:64, "55-64",
+      ifelse(Age %in% 65:74, "65-74",
+      ifelse(Age >= 75, "75+", "Undefined")))))))))
+  ))
+}
+
 
 #__________________________
 # refactor function: changes the value names to be more readable
