@@ -1,0 +1,29 @@
+---
+title: "Police Stops in the City of Boston"
+output: html_document
+---
+
+```{r, echo=FALSE}
+age <- read.csv(file="C:/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/data/stops_by_age_group.csv", header=TRUE, sep=)
+race <- read.csv(file="C:/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/data/stops_by_race.csv", header=TRUE, sep=)
+sex <- read.csv(file="C:/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/data/stops_by_sex.csv", header=TRUE, sep=)
+year <- read.csv(file="C:/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/data/stops_by_year.csv", header=TRUE, sep=)
+black_stops <- as.character(round(race[[3,5]], digits = 1))
+white_stops <- as.character(round(race[[6,5]], digits = 1))
+x18 <- as.character(round(age[[3,5]], digits = 1))
+men <- as.character(round(sex[[2,5]], digits = 1))
+undef_age <- as.character(age[[10,'total']])
+undef_sex <- as.character(sex[[3,'total']])
+undef_race <- as.character(race[[7,'total']])
+```
+
+## The belief of an existant inequality of how law enforcement interact with different social groups (particularly African Americans versus Caucasians) is a well documented phenomenon that has long been a topic for national discussion especially after events such as those in Ferguson, Missouri. We attempted to find inequalities in law enforcement interactions with different social groups by examining records of police stops in the city of Boston from 2011 to 2015
+***
+
+## We found that African-Americans made up `r black_stops`% of police stops in the city of Boston while police stops of whites made up `r white_stops`% of all police stops in the city of Boston. These percentages do not accurately represent the actual population of Boston, however. Whites make up a much larger percentage of the Boston population (around 54%) than blacks (around 24%) but the data shows that it is much more likely for blacks to be stopped by police than it is for whites to be stopped by police. This supports the notion that law enforcement interact with different social groups unequally.
+***
+
+## Other trends we found were that younger people within the ages of 18-24 were the most likely to be stopped by the police as they comprised `r x18`% of total police stops in Boston and that men were much more likely to be stopped by police as men comprised `r men`% of total police stops in Boston despite there being around an equal percentage of men and women in the city of Boston (around 52% of Boston population are women).
+***
+
+## It is worth noting that `r undef_age` of those who were stopped did not define an age, `r undef_sex` of those who were stopped did not define a sex, and `r undef_race` of those who were stopped did not define a race. Population estimates used based on 2010 US Census
