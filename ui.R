@@ -1,9 +1,3 @@
-data <- read.csv("Boston_Police_Department_FIO.csv")
-dataAge <- read.csv("stops_by_age_group.csv")
-dataRace <- read.csv("stops_by_race.csv")
-dataSex <- read.csv("stops_by_sex.csv")
-dataYear <- read.csv("stops_by_year.csv")
-
 
 #Install Shiny package and library
 #install.packages("shiny")
