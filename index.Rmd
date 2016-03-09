@@ -4,10 +4,10 @@ output: html_document
 ---
 
 ```{r, echo=FALSE}
-age <- read.csv(file="C:/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/data/stops_by_age_group.csv", header=TRUE, sep=)
-race <- read.csv(file="C:/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/data/stops_by_race.csv", header=TRUE, sep=)
-sex <- read.csv(file="C:/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/data/stops_by_sex.csv", header=TRUE, sep=)
-year <- read.csv(file="C:/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/data/stops_by_year.csv", header=TRUE, sep=)
+age <- read.csv(file="data/stops_by_age_group.csv", header=TRUE, sep=)
+race <- read.csv(file="data/stops_by_race.csv", header=TRUE, sep=)
+sex <- read.csv(file="data/stops_by_sex.csv", header=TRUE, sep=)
+year <- read.csv(file="data/stops_by_year.csv", header=TRUE, sep=)
 black_stops <- as.character(round(race[[3,5]], digits = 1))
 white_stops <- as.character(round(race[[6,5]], digits = 1))
 x18 <- as.character(round(age[[3,5]], digits = 1))
@@ -24,10 +24,10 @@ undef_race <- as.character(race[[7,'total']])
 ***
 ## **Significance**
 ### These findings are particularly disturbing when considering that these findings are in line with national trends in incarceration. In the United States African-Americans are much more likely to be incarcerated than whites.
-![](/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/img/raceinc.jpg)
+![](img/raceinc.jpg)
 
 ### Narrowing our focus to only the state of Massachusetts we can see that the same racial inequalities regarding incarceration persist:
-![](/Users/jonje/documents/info498f/Crimes-in-the-City-of-Boston/img/MA_Rates_2010.jpg)
+![](img/MA_Rates_2010.jpg)
 
 ### Our findings of racial inequalities in police stops in the city of Boston reinforce the idea that African-Americans are overrepresented in prisons not only in the state of Massachusetts but also in the United States as a whole.
 #### Find more information about US incarceration rates [here](http://www.prisonpolicy.org/reports/rates.html)
