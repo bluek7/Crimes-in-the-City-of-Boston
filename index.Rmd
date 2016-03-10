@@ -37,3 +37,7 @@ undef_race <- as.character(race[[7,'total']])
 ***
 ## **Notes**
 ### It is worth noting that `r undef_age` of those who were stopped did not define an age, `r undef_sex` of those who were stopped did not define a sex, and `r undef_race` of those who were stopped did not define a race. Population estimates used based on 2010 US Census
+
+## **Works Cited**
+### Breaking Down Mass Incarceration in the 2010 Census: State-by-State Incarceration Rates by Race/Ethnicity." Breaking Down Mass Incarceration in the 2010 Census. N.p., n.d. Web. 10 Mar. 2016.
+### "Population Estimates, July 1, 2015, (V2015)." QuickFacts. N.p., n.d. Web. 10 Mar. 2016.

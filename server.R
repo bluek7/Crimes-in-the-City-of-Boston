@@ -10,10 +10,10 @@ library(plotly)
 library(dplyr)
 
 #data <- read.csv("data/Boston_Police_Department_FIO.csv")
-dataAge <- read.csv("data/stops_by_age_group.csv")
-dataRace <- read.csv("data/stops_by_race.csv")
-dataSex <- read.csv("data/stops_by_sex.csv")
-dataYear <- read.csv("data/stops_by_year.csv")
+#dataAge <- read.csv("data/stops_by_age_group.csv")
+#dataRace <- read.csv("data/stops_by_race.csv")
+#dataSex <- read.csv("data/stops_by_sex.csv")
+#dataYear <- read.csv("data/stops_by_year.csv")
 
 #Type of Interface for this application
 shinyServer(
