@@ -46,5 +46,17 @@ shinyServer(
       ) %>% 
         layout(title = "Pullovers by Year")
     }) 
+    
+    output$summaryAge <- makeTable(dataAge)
+    output$summaryRace <- makeTable(dataRace)
+    output$summarySex <- makeTable(dataSex)
+    output$summaryYear <- makeTable(dataYear)
+    
   }
 )
+
+makeTable <- function(dataframe) {
+  renderDataTable({
+    dataframe
+  })
+}
