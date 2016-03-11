@@ -8,7 +8,6 @@
 library(shiny)
 library(plotly)
 library(dplyr)
-library(rmarkdown)
 library(knitr)
 
 #data <- read.csv("data/Boston_Police_Department_FIO.csv")

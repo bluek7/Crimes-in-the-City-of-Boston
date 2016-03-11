@@ -3,8 +3,6 @@
 #install.packages("shiny")
 library(shiny)
 library(plotly)
-library(markdown)
-library(rmarkdown)
 
 colours <- c("Blue" = "Blue", 
              "Red" = "Red", 
@@ -20,6 +18,9 @@ shinyUI(
     #Title of the application
     title = "CRIMES IN THE CITY OF BOSTON",
     
+    tabPanel("About",
+             includeHTML('index.html')
+    ),
       tabPanel("Plots", 
                sidebarLayout(
                  sidebarPanel(
@@ -50,11 +51,9 @@ shinyUI(
              tabPanel("Year", dataTableOutput('summaryYear'))
            )
           ) 
-        ),
+        )
     
-    tabPanel("About",
-             includeHTML('index.html')
-             )
+    
     
       #Main Panel that produces/outputss the Histogram
       
