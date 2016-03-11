@@ -1,12 +1,12 @@
 # Crimes in the City of Boston
 
-We will be analyzing data from the **Boston Police Department FIO (Field Interrogation and Observation) Study**, a large collection of data containing information about each individual occurence in which any person was interrogated by the Boston Police Department.
+We will be analyzing data from the **Boston Police Department FIO (Field Interrogation and Observation) Study**, a large collection of data containing information about each individual occurence in which any person was interrogated by the Boston Police Department. This counts the times individuals are interrogated by police and arrests do not necessarily have to be made.
+
+Many categories of information about the people that were interrogated is provided, such as their location and what clothing they wore are given. However, we are focusing on **sex, race, age, and the year in which the arrest occured** in this project, to analyze if there are differences between different demographics of people and how often they are interrogated.
 
 The data is recent as it was collected from **December 2012** to **May of 2015**, as for the kind of analysis we are conducting, the information used must be relevant to today.
 
 [Link to Boston Police Department FIO Study Data](https://data.cityofboston.gov/Public-Safety/Boston-Police-Department-FIO/xmmk-i78r)
-
-Many categories of information about the people that were interrogated is provided, such as their location and what clothing they wore are given. However, we are focusing on **sex, race, age, and the year in which the arrest occured** in this project, to analyze if there are differences between different demographics of people and how often they are interrogated.
 
 *Presented as a Shiny app to display interactive visual representations of our dataset as well as an overall analysis of what we found*
 
