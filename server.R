@@ -1,7 +1,10 @@
+# INFO 498F
+# SERVER
 
-#Jacob Burke
-#March 1, 2015
-#INFO 498f
+# Michael Lew
+# Jon Jewik
+# Jacob Burke
+# Kush Gupta
 
 #Install Shiny package and library
 #install.packages("shiny")
@@ -21,6 +24,7 @@ dataYear <- read.csv("data/stops_by_year.csv")
 shinyServer(
   function(input, output){
     
+    # Function for plotting bar graph for Age
     output$plotAge <- renderPlotly({
       dataAge %>% plot_ly(type = 'bar',
                                x = Age_group, y = total, 
@@ -28,8 +32,8 @@ shinyServer(
       ) %>%
         layout(title = "Pullovers by Age")
     })
-      #render_plotly("Pullovers by Age", dataAge, 
-       #                             dataAge$Age, dataAge$total, 'bar', input$color)
+      
+    # Function for plotting bar graph for Race
     output$plotRace <- renderPlotly({
       dataRace %>% plot_ly(type = 'bar',
                           x = Race, y = total, 
@@ -38,6 +42,8 @@ shinyServer(
       ) %>%
         layout(title = "Pullovers by Race")
     })
+    
+    # Function for plotting bar graph for Sex
     output$plotSex <- renderPlotly({
       dataSex %>% plot_ly(type = 'bar',
                           x = Sex, y = total, 
@@ -46,6 +52,8 @@ shinyServer(
       ) %>%
         layout(title = "Pullovers by Sex")
     })
+    
+    # Function for plotting bar graph for Year
     output$plotYear <- renderPlotly({
       dataYear %>% plot_ly(type = 'bar',
                           x = Year, y = total, 
@@ -56,7 +64,7 @@ shinyServer(
     })
     
     
-    
+    # Functions for making tables for Age, Race, Sex and Year
     output$summaryAge <- makeTable(dataAge)
     output$summaryRace <- makeTable(dataRace)
     output$summarySex <- makeTable(dataSex)
@@ -64,6 +72,7 @@ shinyServer(
   }
 )
 
+# General function to render data table
 makeTable <- function(dataframe) {
   renderDataTable({
     dataframe
