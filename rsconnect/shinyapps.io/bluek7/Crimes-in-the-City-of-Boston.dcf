@@ -2,8 +2,8 @@ name: Crimes-in-the-City-of-Boston
 account: bluek7
 server: shinyapps.io
 appId: 88383
-bundleId: 393074
+bundleId: 393475
 url: https://bluek7.shinyapps.io/Crimes-in-the-City-of-Boston/
-when: 1457698080.03414
+when: 1457731202.05146
 asMultiple: FALSE
 asStatic: FALSE

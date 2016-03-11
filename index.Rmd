@@ -3,6 +3,8 @@ title: "Police Stops in the City of Boston"
 output: md_document
 ---
 
+# Police Stops in the City of Boston
+
 ```{r, echo=FALSE}
 age <- read.csv(file="data/stops_by_age_group.csv", header=TRUE, sep=)
 race <- read.csv(file="data/stops_by_race.csv", header=TRUE, sep=)

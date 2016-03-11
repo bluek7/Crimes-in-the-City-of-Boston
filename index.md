@@ -3,6 +3,8 @@ title: "Police Stops in the City of Boston"
 output: md_document
 ---
 
+# Police Stops in the City of Boston
+
 
 
 ### The belief of an existant inequality of how law enforcement interact with different social groups (particularly African Americans versus Caucasians) is a well documented phenomenon that has long been a topic for national discussion especially after events such as those in Ferguson, Missouri. We attempted to find inequalities in law enforcement interactions with different social groups by examining records of police stops in the city of Boston from 2011 to 2015
