@@ -9,17 +9,32 @@ shinyUI(
   
   navbarPage(
     #Title of the application
-    titlePanel(title = h2("Crimes in the City of Boston", align = "center")),
+    titlePanel(title = "Crimes in the City of Boston"),
     
       tabPanel("Plots", 
+               sidebarLayout(
+                 sidebarPanel(
+                   radioButtons("color", 
+                                "Color: ", 
+                                choices = c("Blue" = "Blue", 
+                                            "Red" = "Red", 
+                                            "Yellow" = "Yellow", 
+                                            "Green" = "Green", 
+                                            "Orange" = "Orange", 
+                                            "Black" = "Black"), 
+                                selected = "Blue")
+                   
+                 ),
+               
                mainPanel(
                  tabsetPanel(
-                   tabPanel("Age", plotlyOutput("barAge")), 
-                   tabPanel("Race", plotlyOutput("barRace")), 
-                   tabPanel("Sex", plotlyOutput("barSex")), 
-                   tabPanel("Year", plotlyOutput("barYear"))
+                   tabPanel("Age", plotlyOutput("plotAge")), 
+                   tabPanel("Race", plotlyOutput("plotRace")), 
+                   tabPanel("Sex", plotlyOutput("plotSex")), 
+                   tabPanel("Year", plotlyOutput("plotYear"))
                  )
             )
+               )
           ),
       
       tabPanel("Summary",

@@ -19,41 +19,31 @@ library(dplyr)
 shinyServer(
   function(input, output){
     
-    output$barAge <- renderPlotly({
-        dataAge %>% plot_ly(type = 'bar', 
-                    x = Age_group, y = total
-                    ) %>% 
-        layout(title = "Pullovers by Age")
-    })
-    
-    output$barRace <- renderPlotly({
-      dataRace %>% plot_ly(type = 'bar', 
-                          x = Race, y = total
-      ) %>% 
-        layout(title = "Pullovers by Race")
-    })
-    
-    output$barSex <- renderPlotly({
-      dataSex %>% plot_ly(type = 'bar', 
-                           x = Sex, y = total
-      ) %>% 
-        layout(title = "Pullovers by Sex")
-    })
-   
-    output$barYear <- renderPlotly({
-      dataYear %>% plot_ly(type = 'bar', 
-                           x = Year, y = total
-      ) %>% 
-        layout(title = "Pullovers by Year")
-    }) 
+    output$plotAge <- render_plotly("Pullovers by Age", dataAge, 
+                                    dataAge$Age, dataAge$total, 'bar', input$color)
+    output$plotRace <- render_plotly("Pullovers by Race", dataRace, 
+                                     dataRace$Race, dataRace$total, 'bar', input$color)
+    output$plotSex <- render_plotly("Pullovers by Sex", dataSex, 
+                                    dataSex$Sex, dataSex$total, 'bar', input$color)
+    output$plotYear <- render_plotly("Pullovers by Year", dataYear, 
+                                     dataYear$Year, dataYear$total, 'bar', input$color)
     
     output$summaryAge <- makeTable(dataAge)
     output$summaryRace <- makeTable(dataRace)
     output$summarySex <- makeTable(dataSex)
     output$summaryYear <- makeTable(dataYear)
-    
   }
 )
+
+render_plotly <- function(chart_title, dataWildcard, x_values, y_values, chart_type, colour) {
+  renderPlotly({
+    dataWildcard %>% plot_ly(type = chart_type,
+                             x = x_values, y = y_values, 
+                             marker = list(color = colour)
+    ) %>%
+      layout(title = chart_title)
+  })
+}
 
 makeTable <- function(dataframe) {
   renderDataTable({
