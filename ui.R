@@ -4,13 +4,6 @@
 library(shiny)
 library(plotly)
 
-colours <- c("Blue" = "Blue", 
-             "Red" = "Red", 
-             "Yellow" = "Yellow", 
-             "Green" = "Green", 
-             "Orange" = "Orange", 
-             "Black" = "Black")
-
 #Type of Interface for this application
 shinyUI(
   
@@ -18,17 +11,23 @@ shinyUI(
     #Title of the application
     title = "CRIMES IN THE CITY OF BOSTON",
     
-    tabPanel("About",
-             includeHTML('index.html')
-    ),
+    #tabPanel("About",
+     #        includeHTML('index.html')
+    #),
       tabPanel("Plots", 
                sidebarLayout(
                  sidebarPanel(
-                   
-                   radioButtons("color", 
-                                "Color: ", 
-                                choices = colours, 
-                                selected = "Blue")
+                   "INFO 498F Project",
+                   br(),
+                   p("Team Members:"),
+                   p("Michael Lew"),
+                   p("Jon Jewik"),
+                   p("Jacob Burke"),
+                   p("Kush Gupta")
+                  # radioButtons("color", 
+                  #              "Color: ", 
+                  #              choices = colours, 
+                  #              selected = "Blue")
                 ),
                
                mainPanel(

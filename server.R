@@ -24,7 +24,7 @@ shinyServer(
     output$plotAge <- renderPlotly({
       dataAge %>% plot_ly(type = 'bar',
                                x = Age_group, y = total, 
-                               marker = list(color = input$color)
+                               marker = list(color = total)
       ) %>%
         layout(title = "Pullovers by Age")
     })
@@ -33,21 +33,24 @@ shinyServer(
     output$plotRace <- renderPlotly({
       dataRace %>% plot_ly(type = 'bar',
                           x = Race, y = total, 
-                          marker = list(color = input$color)
+                          marker = list(color = total, colorscale = 'Blues', 
+                                        reversescale = TRUE)
       ) %>%
         layout(title = "Pullovers by Race")
     })
     output$plotSex <- renderPlotly({
       dataSex %>% plot_ly(type = 'bar',
                           x = Sex, y = total, 
-                          marker = list(color = input$color)
+                          marker = list(color = total, colorscale = 'Greys', 
+                                        reversescale = TRUE)
       ) %>%
         layout(title = "Pullovers by Sex")
     })
     output$plotYear <- renderPlotly({
       dataYear %>% plot_ly(type = 'bar',
                           x = Year, y = total, 
-                          marker = list(color = input$color)
+                          marker = list(color = total, colorscale = 'Greens', 
+                                        reversescale = TRUE)
       ) %>%
         layout(title = "Pullovers by Year")
     })
