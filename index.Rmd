@@ -1,6 +1,6 @@
 ---
 title: "Police Stops in the City of Boston"
-output: html_document
+output: md_document
 ---
 
 ```{r, echo=FALSE}

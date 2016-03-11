@@ -19,9 +19,9 @@ shinyUI(
     title = "CRIMES IN THE CITY OF BOSTON",
     
     # HTML page for information 
-    #tabPanel("About",
-     #        includeHTML('index.html')
-    #),
+    tabPanel("About",
+             includeMarkdown('index.md')
+    ),
      
     # Tab for plots
       tabPanel("Plots", 
